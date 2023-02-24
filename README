@@ -1,0 +1,30 @@
+This folder contains two source code used in Sidorenko et al. (2023)
+(1) predLink
+(2) 01_sim-sib-array.R
+
+(1) predLink
+predLink is a C++-based program that predicts linkage signals from association results
+Input:
+- an IBD file (--ibd):  specifies for each position (in cM) what is the IBD probability. IBD probability output from Merlin
+- a step size (--step): Specifies step between markers to make prediction. Default is 1 (minimum is 1 cM).
+- a genotype file (--bfile): binary PLINK format for genotypes
+- a GWAS summary statistics file (--sumstat)
+- a chromosome number (--chr)
+- an output prefix (--out)
+
+==> predLink can be compiled by typing: make
+==> Help can be accessed by typing: ./predLink --help
+
+
+(2) 01_sim-sib-array.R
+This R script simulates genotypes of siblings from a set of haplotypes (from 962 trios in the UK Biobank) and recombination map.
+Input data are
+Maps: a folder containing 22 maps for each autosome (maps were downloaded from bcfTool website)
+Haplotypes: a folder containg 22 .RData file (one for each autsome). Each RData file is matrix of phased haplotypes
+map file: a PLINK map file
+bim file: a PLINK bim file
+
+Output
+- PLINK format genotypes for sibling pairs
+- RData objects containing the coordinates (chromosome, start, stop) and status of all IBD segments
+
