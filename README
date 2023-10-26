@@ -1,6 +1,8 @@
 This folder contains two source code used in Sidorenko et al. (2023)
 (1) predLink
 (2) 01_sim-sib-array.R
+(3) sibREML_v0.1.1.R
+(4) Summarised_genetic_map.txt
 
 (1) predLink
 predLink is a C++-based program that predicts linkage signals from association results
@@ -27,4 +29,17 @@ bim file: a PLINK bim file
 Output
 - PLINK format genotypes for sibling pairs
 - RData objects containing the coordinates (chromosome, start, stop) and status of all IBD segments
+
+(3) sibREML_v0.1.1.R
+This R script implements a REstricted Maximum Likelihood (REML) estimation of genetic variance for independent families.
+The Average-Information algorithm implemented in this R script was previously described in Yang et al. AJHG (2011).
+
+(4) Summarised_genetic_map.txt
+This files contains 6388 (+1 header) rows and 5 columns sumamrising the genetic and physical coordinates of loci used in linkage analyses.
+An overview is shown below...
+CHR cM_Start cM_End Mb_Start Mb_End
+1 0 0.5 0.010583 1.100217
+1 0.5 1 1.100319 1.184244
+1 1 1.5 1.185008 1.977507
+1 1.5 2 1.977537 2.255633
 
